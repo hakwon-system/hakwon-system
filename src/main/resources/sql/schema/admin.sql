@@ -77,3 +77,16 @@ create table if not exists report_file
     report_id     int,
     delete_yn     varchar(255)
 );
+
+create table if not exists teacher
+(
+	id int auto_increment primary key,
+    user_id varchar(20) not null,
+    password varchar(100) not null,
+    name varchar(20) not null,
+    number varchar(20) not null,
+    available varchar(20) not null default 'o',
+    join_date datetime not null default (CURRENT_TIMESTAMP),
+    update_date datetime not null default (CURRENT_TIMESTAMP),
+    department varchar(20)
+);

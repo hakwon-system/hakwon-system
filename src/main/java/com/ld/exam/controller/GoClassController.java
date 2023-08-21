@@ -164,7 +164,6 @@ public class GoClassController {
 		}
 		List<WordgugudanVO> showList = new ArrayList<WordgugudanVO>();
 		showList = wordpdfService.wordpdflist_pageSelect(level);
-		System.out.println(showList.get(0).getGugudan_name());
 		session.setAttribute("WordpdfList", showList);
 		return url;
 	}

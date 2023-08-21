@@ -133,3 +133,10 @@ create table if not exists student_word_class
     student_id int          not null,
     name       varchar(255) not null
 );
+
+--단어구구단 목록
+create table if not exists word_class
+(
+	id int auto_increment primary key,
+    name varchar(50)
+);
