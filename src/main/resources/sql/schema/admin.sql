@@ -91,3 +91,15 @@ create table if not exists teacher
     update_date datetime not null default (CURRENT_TIMESTAMP),
     department varchar(20)
 );
+
+create table if not exists department
+(
+	id int auto_increment primary key,
+    name varchar(100)
+);
+create table if not exists student_class
+(
+	id int auto_increment primary key,
+    title varchar(200),
+    name varchar(100)
+);
