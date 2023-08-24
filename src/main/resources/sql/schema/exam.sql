@@ -18,6 +18,7 @@ create table if not exists trans_table
 
 create table if not exists wordgugudan
 (
+    id            int auto_increment not null primary key,
     gugudan_name  varchar(20),
     gugudan_level int
 );
