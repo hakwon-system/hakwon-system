@@ -134,7 +134,7 @@ public class LoginController {
     public String idCheck(@RequestParam("id") String id, @RequestParam("name") String name, Model model, HttpServletRequest request) {
 
         List<StudentVO> studentVO = studentService.studentList();
-        if (studentVO.size() != 0) {
+        if (!studentVO.isEmpty()) {
             for (int i = 0; i < studentVO.size(); i++) {
                 if (studentVO.get(i).getUser_id().equals(id)) {
                     model.addAttribute("result", 1);
@@ -156,7 +156,7 @@ public class LoginController {
         List<TeacherVO> teacherVO = teacherService.teacherList();
 
         System.out.println(teacherVO.size() + " 1234");
-        if (teacherVO.size() != 0) {
+        if (!teacherVO.isEmpty()) {
             for (int i = 0; i < teacherVO.size(); i++) {
                 if (teacherVO.get(i).getUser_id().equals(id)) {
                     request.setAttribute("result", 1);

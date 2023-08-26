@@ -286,27 +286,6 @@ public class orderWorkController {
 			mav.setViewName("redirect:/orderWorkList.mdo");
 			return mav;
 		}
-		//업무 재전송
-		/*@RequestMapping("/reOrder.mdo")
-		public String reOrder(@RequestParam("id")int id,HttpServletRequest request,
-		@RequestParam("teacher_name")String teacher_name,
-		@RequestParam(value="reply",required=false)String reply,
-		@RequestParam(value="deadline",required=false)String deadline) {
-			Timestamp timestamp=null;
-			if(!deadline.equals("")) {
-				deadline=deadline+" 00:00:00";
-				timestamp = Timestamp.valueOf(deadline);
-			}
-			
-			ReportVO reportVO=new ReportVO();
-			reportVO.setReply(reply);
-			reportVO.setDeadline(timestamp);
-			reportVO.setId(id);
-			reportVO.setTeacher_name(teacher_name);
-			teacherService.reOrder(reportVO);
-			return "redirect:/orderWorkList.mdo";
-		}*/
-		//강사 업무 목록
 		@GetMapping(value = "/teacherOrderList.mdo")
 		public ModelAndView teacherOrderList1(@RequestParam(value="date",required=false)String date,
 				HttpServletRequest request) {

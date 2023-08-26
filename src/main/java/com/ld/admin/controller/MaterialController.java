@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
+//X
 @Controller
 public class MaterialController {
 
@@ -45,7 +46,6 @@ public class MaterialController {
 	@RequestMapping(value = "/insertmaterial.mdo", method = RequestMethod.POST)
 	public String material_insertGet(@ModelAttribute MaterialVO materialVO) {
 		materialService.materialInsert(materialVO);
-//		System.out.println(ad_encyVO.toString());
 		return "redirect:/materiallist.mdo";
 	}
 	@RequestMapping("/materialview.mdo")

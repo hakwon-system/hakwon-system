@@ -22,12 +22,14 @@ public class AdminworkController {
 	public AdminworkController(AdminworkService adminworkService) {
 		this.adminworkService = adminworkService;
 	}
-	
+
+	//X
 	@GetMapping("/workdivide.mdo")
 	public String workdivideGet() {
 		return "admin/workdivide";
 	}
-	
+
+	//X
 	@RequestMapping("/worklist.mdo")
 	@ResponseBody
 	public Map<String, Object> adminworkGet(AdminworkVO adminworkVO){

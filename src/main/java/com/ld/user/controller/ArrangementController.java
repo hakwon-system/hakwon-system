@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-
+//X
 @Controller
 public class ArrangementController {
 	@Autowired
@@ -32,7 +32,6 @@ public class ArrangementController {
     @RequestMapping(value = "/insertarrangement.do", method = RequestMethod.POST)
 	public List<Map<String, Object>> test(@RequestBody List<Map<String, Object>> param) {
 		arrangementService.arrangementinsert(param);
-		//sqlSessionTemplate.insert("arrangement.arrangementinsert",param);
 		return param;
 	}
 	@GetMapping("/arrangementlist.do")

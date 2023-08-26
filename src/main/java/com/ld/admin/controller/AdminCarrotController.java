@@ -69,12 +69,9 @@ public class AdminCarrotController {
 		UpdatorVO updatorVO=new UpdatorVO();
 		UpdatorVO updatorVO1=new UpdatorVO();
 		updatorVO.setCarrot_seq(carrotVO.getCarrot_seq());
-		//updator_name=updator_name+","+TeacherVO.getAdmin_name();
 		updatorVO.setUpdator_name(updator_name);
 		updatorService.updateUpdator(updatorVO);
 		carrotService.updateCarrot(carrotVO);
-		//sqlSessionTemplate.update("updator.updateUpdator",updatorVO);
-		//sqlSessionTemplate.update("carrot.updateCarrot",carrotVO);
 		updatorVO1=carrotService.getUpdator(carrotVO.getCarrot_seq());
 		model.addAttribute("updatorList",updatorVO1);
 		System.out.println(updator_name);
@@ -82,7 +79,6 @@ public class AdminCarrotController {
 	}
 	@RequestMapping(value="/selectStudent.mdo", method= {RequestMethod.GET})
 	public ModelAndView selectStudent(@RequestParam("parentnumber") String[] parentnumber) {
-		//student_parentnumber=student_parentnumber.replaceAll(",", "|");
 		System.out.println(parentnumber);
 		ModelAndView mav=new ModelAndView();
 		List<StudentVO> studentVO=new ArrayList();

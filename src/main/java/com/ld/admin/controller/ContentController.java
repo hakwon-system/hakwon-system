@@ -17,14 +17,19 @@ public class ContentController {
 	@Autowired
 	private TransService transService;
 
+	//X
 	@GetMapping("/maincontent.mdo")
 	public String maincontentGet() {
 		return "admin/maincontent";
 	}
+
+	//X
 	@GetMapping("/insertgrammar.mdo")
 	public String insertgrammarGet() {
 		return "admin/insertgrammar";
 	}
+
+	//X
 	@ResponseBody
     @RequestMapping(value = "/grammarinsert.mdo", method = RequestMethod.POST)
 	public List<Map<String, Object>> grammarin(@RequestBody List<Map<String, Object>> param) {
@@ -32,14 +37,17 @@ public class ContentController {
 		grammarService.grammarinsert(param);
 		return param;
 	}
+
+	//X
 	@GetMapping("/transinsert.mdo")
 	public String transinsertGet() {
 		return "admin/transinsert";
 	}
+
+	//X
 	@ResponseBody
     @RequestMapping(value = "/inserttrans.mdo", method = RequestMethod.POST)
 	public List<Map<String, Object>> inserttrans(@RequestBody List<Map<String, Object>> param) {
-		//sqlSessionTemplate.insert("trans.transinsert",param);
 		transService.transinsert(param);
 		return param;
 	}

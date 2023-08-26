@@ -24,12 +24,9 @@ public class AcademyController {
 	public AcademyController(AcademyService academyService) {
 		this.academyService = academyService;
 	}
-	@RequestMapping(value="sung")
-	public String aa() {
-		
-		return "admin/NewFile";
-	}
-	
+
+
+	//X
 	@RequestMapping(value = "/accessacademy.mdo")
 	public ModelAndView accessacademyGet(Model model,HttpSession session) throws Exception {
 		ModelAndView mav = new ModelAndView();
@@ -44,6 +41,8 @@ public class AcademyController {
 		mav.addObject("AcademyList", showList);
 		return mav;
 	}
+
+	//X
 	@GetMapping("/academyinsert.mdo")
 	public String academyinsertGet() {
 		return "admin/academyinsert";
@@ -54,6 +53,8 @@ public class AcademyController {
 //		System.out.println(ad_encyVO.toString());
 		return "redirect:/accessacademy.mdo";
 	}
+
+	//X
 	@RequestMapping("/academyview.mdo")
 	public ModelAndView getacademyGet(@RequestParam int academy_seq,HttpSession session) {
 		ModelAndView mav = new ModelAndView();
@@ -68,6 +69,7 @@ public class AcademyController {
 		return mav;
 	}
 
+	//X
 	@RequestMapping(value = "/adminsignin.mdo")
 	public ModelAndView adminsigninGet(Model model) throws Exception {
 		ModelAndView mav = new ModelAndView();
