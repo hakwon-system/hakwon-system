@@ -64,8 +64,8 @@ create table if not exists report
     importance         varchar(255) null default 'x',
     longorder          varchar(255) null default 'x',
     file_id            int          null,
-    create_date        datetime     null default (CURRENT_TIMESTAMP),
-    update_date        datetime     null default (CURRENT_TIMESTAMP),
+    create_date        datetime     null default CURRENT_TIMESTAMP,
+    update_date        datetime     null default CURRENT_TIMESTAMP,
     daily              varchar(20)  null default 'x'
 );
 
@@ -81,25 +81,25 @@ create table if not exists report_file
 
 create table if not exists teacher
 (
-	id int auto_increment primary key,
-    user_id varchar(20) not null,
-    password varchar(100) not null,
-    name varchar(20) not null,
-    number varchar(20) not null,
-    available varchar(20) not null default 'o',
-    join_date datetime not null default (CURRENT_TIMESTAMP),
-    update_date datetime not null default (CURRENT_TIMESTAMP),
-    department varchar(20)
+    id          int auto_increment primary key,
+    user_id     varchar(20)  not null,
+    password    varchar(100) not null,
+    name        varchar(20)  not null,
+    number      varchar(20)  not null,
+    available   varchar(20)  not null default 'o',
+    join_date   datetime     not null default CURRENT_TIMESTAMP,
+    update_date datetime     not null default CURRENT_TIMESTAMP,
+    department  varchar(20)
 );
 
 create table if not exists department
 (
-	id int auto_increment primary key,
+    id   int auto_increment primary key,
     name varchar(100)
 );
 create table if not exists student_class
 (
-	id int auto_increment primary key,
+    id    int auto_increment primary key,
     title varchar(200),
-    name varchar(100)
+    name  varchar(100)
 );
