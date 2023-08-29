@@ -7,17 +7,17 @@ create table if not exists updator
 create table if not exists student
 (
     id            int auto_increment primary key,
-    available     varchar(20) not null,
-    user_id       varchar(20) not null,
-    parentnumber  varchar(20) not null,
-    number        varchar(20) not null,
-    grade         varchar(20) not null,
-    school        varchar(20) not null,
-    password      varchar(20) not null,
-    name          varchar(20) not null,
-    join_date     datetime    not null,
-    update_date   datetime    not null,
-    student_class varchar(20) not null
+    available     varchar(20)  not null default 'o',
+    user_id       varchar(20)  not null,
+    parentnumber  varchar(20)  not null,
+    number        varchar(20)  not null,
+    grade         varchar(20)  not null,
+    school        varchar(20)  not null,
+    password      varchar(100) not null,
+    name          varchar(20)  not null,
+    join_date     datetime     not null default CURRENT_TIMESTAMP,
+    update_date   datetime     not null,
+    student_class varchar(20)  not null
 );
 
 create table if not exists schoolmatchtest

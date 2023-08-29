@@ -59,7 +59,7 @@
                         <h6 class="collapse-header">목록</h6>
                         <a class="collapse-item" href="workdivide.mdo">직원 업무 관리</a>
                         <a class="collapse-item" href="watchdisplay.mdo">출석 및 랭킹</a>
-                        <a class="collapse-item" href="accessacademy.mdo">학습센터 정보</a>
+                        <a class="collapse-item" href="admin/academy/home">학습센터 정보</a>
                         <a class="collapse-item" href="tables.mdo">학습자 관리</a>
                         <a class="collapse-item" href="accessadmin.mdo">선생님 관리</a>
                         <a class="collapse-item" href="assignmentclass.mdo">반 편성 및 배정</a>
@@ -484,7 +484,7 @@
                                             <div class="contents" id="sendmenu" onclick="location.href='sendmessage.mdo';">알림장 전송</div>
                                             <div class="contents" id="workmenu" onclick="location.href='workdivide.mdo';">직원 업무 관리</div>
                                             <div class="contents" id="watchmenu" onclick="location.href='watchdisplay.mdo';">출석 및 랭킹</div>
-                                            <div class="contents" id="academymenu" onclick="location.href='accessacademy.mdo';">학습센터 정보</div>
+                                            <div class="contents" id="academymenu" onclick="location.href='academy.mdo';">학습센터 정보</div>
                                             <div class="contents" id="teachermenu" onclick="location.href='accessadmin.mdo';">선생님 관리</div>
                                             <div class="contents" id="acceptancemenu" onclick="location.href='#';">수납 관리</div>
                                             <div class="contents" id="lecturemenu" onclick="location.href='mainlecture.mdo';">전체 강의</div>

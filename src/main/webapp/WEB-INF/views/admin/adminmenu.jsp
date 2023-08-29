@@ -411,7 +411,7 @@ p.btn_next {
 			<div class="topmenu">직원관리</div>
 		</div>
 		<div class="menuline2">
-			<div class="normalmenu" onclick="location.href='accessacademy.mdo'">센터정보</div>
+			<div class="normalmenu" onclick="location.href='admin/academy/home'">학습센터 정보</div>
 			<div class="normalmenu" onclick="location.href='tables.mdo'">학생정보</div>
 			<div class="normalmenu" onclick="location.href='mainlecture.mdo'">영상강의</div>
 			<div class="normalmenu" onclick="location.href='accessadmin.mdo'">직원정보</div>

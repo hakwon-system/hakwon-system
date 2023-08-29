@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../side.jsp"%>
-  <%@ include file="../header.jsp"%>
+<%@ include file="../../side.jsp"%>
+  <%@ include file="../../header.jsp"%>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
@@ -12,7 +12,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                             <h6 class="m-0 font-weight-bold text-primary">학습센터</h6>
-                            <button class="shadow-sm bg-body rounded" onclick="location.href='academyinsert.mdo'">학습센터 추가</button>
+                            <button class="shadow-sm bg-body rounded" onclick="location.href='/admin/academy/create'">학습센터 추가</button>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -30,7 +30,7 @@
                                         <c:forEach var="list" items="${AcademyList}" varStatus="status">
 											<tr>
 												<td><c:out value="${status.count}" /></td>
-												<td onclick="location.href='academyview.mdo?academy_seq=${list.academy_seq}'"><c:out value="${list.academy_name}" /></td>
+												<td onclick="location.href='/admin/academy/${list.academy_seq}'"><c:out value="${list.academy_name}" /></td>
 												<td><c:out value="${list.academy_phone1}" />-<c:out value="${list.academy_phone2}" />-<c:out value="${list.academy_phone3}" /></td>
 												<td><c:out value="${list.academy_address}" /></td>
 												<td><c:out value="${list.academy_detailaddress}" /></td>

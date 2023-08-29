@@ -18,47 +18,51 @@ import java.util.List;
 @Controller
 public class MaterialController {
 
-	@Autowired
-	private final MaterialService materialService;
+    @Autowired
+    private final MaterialService materialService;
 
-	@Inject
-	public MaterialController(MaterialService materialService) {
-		this.materialService = materialService;
-	}
-	@RequestMapping(value = "/materiallist.mdo")
-	public ModelAndView materiallistGet(Model model,HttpSession session) throws Exception {
-		ModelAndView mav = new ModelAndView();
-		if(session.getAttribute("admin")== null) {
-			mav.setViewName("admin/adminlogin");
-		}else {
-			mav.setViewName("admin/materiallist");
-		}
-		Criteria cr = null;
-		List<MaterialVO> showList = new ArrayList<MaterialVO>();
-		showList = materialService.materiallist(cr);
-		mav.addObject("MaterialList", showList);
-		return mav;
-	}
-	@GetMapping("/materialinsert.mdo")
-	public String materialinsertGet() {
-		return "admin/materialinsert";
-	}
-	@RequestMapping(value = "/insertmaterial.mdo", method = RequestMethod.POST)
-	public String material_insertGet(@ModelAttribute MaterialVO materialVO) {
-		materialService.materialInsert(materialVO);
-		return "redirect:/materiallist.mdo";
-	}
-	@RequestMapping("/materialview.mdo")
-	public ModelAndView getmaterialGet(@RequestParam int material_seq, HttpSession session) {
-		ModelAndView mav = new ModelAndView();
-		if(session.getAttribute("admin")== null) {
-			mav.setViewName("admin/adminlogin");
-		}else {
-			mav.setViewName("admin/materialview");
-		}
-		MaterialVO materialVO;
-		materialVO = materialService.materialread(material_seq);
-		mav.addObject("notice_view", materialVO);
-		return mav;
-	}
+    @Inject
+    public MaterialController(MaterialService materialService) {
+        this.materialService = materialService;
+    }
+
+    @RequestMapping(value = "/materiallist.mdo")
+    public ModelAndView materiallistGet(Model model, HttpSession session) throws Exception {
+        ModelAndView mav = new ModelAndView();
+        if (session.getAttribute("admin") == null) {
+            mav.setViewName("admin/login");
+        } else {
+            mav.setViewName("admin/materiallist");
+        }
+        Criteria cr = null;
+        List<MaterialVO> showList = new ArrayList<MaterialVO>();
+        showList = materialService.materiallist(cr);
+        mav.addObject("MaterialList", showList);
+        return mav;
+    }
+
+    @GetMapping("/materialinsert.mdo")
+    public String materialinsertGet() {
+        return "admin/materialinsert";
+    }
+
+    @RequestMapping(value = "/insertmaterial.mdo", method = RequestMethod.POST)
+    public String material_insertGet(@ModelAttribute MaterialVO materialVO) {
+        materialService.materialInsert(materialVO);
+        return "redirect:/materiallist.mdo";
+    }
+
+    @RequestMapping("/materialview.mdo")
+    public ModelAndView getmaterialGet(@RequestParam int material_seq, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+        if (session.getAttribute("admin") == null) {
+            mav.setViewName("admin/login");
+        } else {
+            mav.setViewName("admin/materialview");
+        }
+        MaterialVO materialVO;
+        materialVO = materialService.materialread(material_seq);
+        mav.addObject("notice_view", materialVO);
+        return mav;
+    }
 }
