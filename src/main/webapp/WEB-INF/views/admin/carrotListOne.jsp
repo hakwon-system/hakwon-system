@@ -597,7 +597,7 @@
 <input type="button" value="이미지저장" onclick="location.href='carrotview.do?carrot_seq=${carrot_view.carrot_seq}'">
 	                                    <input type="submit" class="shadow-sm bg-body rounded" id="" value="수정하기">
 	                                    <input type="button" value="뒤로가기" onclick="history.go(-1)">
-	                                    수정인:<input type="text" name="updator_name" value="${updatorList.updator_name}" readonly>
+	                                    수정인:<input type="text" name="updator_name" value="${updatorList.updatorName}" readonly>
 	                                </div>
 	                                <div class="card-body">
 	<img class="mainheaderimg1" alt="img1" src="img/admin/carrot3.png">
