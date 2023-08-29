@@ -18,6 +18,7 @@ create table if not exists trans_table
 
 create table if not exists wordgugudan
 (
+    id            int auto_increment not null primary key,
     gugudan_name  varchar(20),
     gugudan_level int
 );
@@ -132,4 +133,11 @@ create table if not exists student_word_class
     id         int auto_increment primary key,
     student_id int          not null,
     name       varchar(255) not null
+);
+
+--단어구구단 목록
+create table if not exists word_class
+(
+	id int auto_increment primary key,
+    name varchar(50)
 );

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
+//X
 @Controller
 public class NoticeController {
 

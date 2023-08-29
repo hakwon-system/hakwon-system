@@ -90,7 +90,7 @@ public class LoginController {
         studentVO2.setSchool(school);
         studentVO2.setPassword(password);
         studentService.insertStudent(studentVO2);
-        url = "user/login";
+        url = "login/login";
         request.setAttribute("message", "회원가입 완료.");
         return url;
     }
@@ -121,41 +121,50 @@ public class LoginController {
         teacherVO2.setNumber(number);
         teacherVO2.setPassword(password);
         teacherService.insertTeacher(teacherVO2);
-        if (access.equals("o")) {
+        /*if (access.equals("o")) {
             url = "admin/joinTeacherAdmin";
-        } else
-            url = "user/login";
+        } else*/
+        url = "login/login";
         request.setAttribute("message", "회원가입 완료.");
         return url;
     }
 
     //학생 아이디 중복 체크
-    @RequestMapping("/idCheck.do")
+    @PostMapping("/idCheck.do")
     public String idCheck(@RequestParam("id") String id, @RequestParam("name") String name, Model model, HttpServletRequest request) {
 
         List<StudentVO> studentVO = studentService.studentList();
-        for (int i = 0; i < studentVO.size(); i++) {
-            if (studentVO.get(i).getUser_id().equals(id)) {
-                model.addAttribute("result", 1);
-                break;
-            } else model.addAttribute("result", -1);
+        if (!studentVO.isEmpty()) {
+            for (int i = 0; i < studentVO.size(); i++) {
+                if (studentVO.get(i).getUser_id().equals(id)) {
+                    model.addAttribute("result", 1);
+                    break;
+                } else model.addAttribute("result", -1);
+            }
+        } else {
+            model.addAttribute("result", -1);
         }
-
         request.setAttribute("name", name);
         request.setAttribute("id", id);
         return "user/joinStudent";
     }
 
     //강사 아이디 중복 체크
-    @RequestMapping("/idCheckTeacher.do")
+    @PostMapping("/idCheckTeacher.do")
     public String idCheckTeacher(@RequestParam("id") String id, @RequestParam("name") String name, Model model, HttpServletRequest request) {
 
         List<TeacherVO> teacherVO = teacherService.teacherList();
-        for (int i = 0; i < teacherVO.size(); i++) {
-            if (teacherVO.get(i).getUser_id().equals(id)) {
-                request.setAttribute("result", 1);
-                break;
-            } else request.setAttribute("result", -1);
+
+        System.out.println(teacherVO.size() + " 1234");
+        if (!teacherVO.isEmpty()) {
+            for (int i = 0; i < teacherVO.size(); i++) {
+                if (teacherVO.get(i).getUser_id().equals(id)) {
+                    request.setAttribute("result", 1);
+                    break;
+                } else request.setAttribute("result", -1);
+            }
+        } else {
+            request.setAttribute("result", -1);
         }
         request.setAttribute("name", name);
         request.setAttribute("id", id);

@@ -11,21 +11,24 @@ public class LectureController {
 	
 	@Autowired
 	private LectureService lectureService;
+
+	//X
 	@GetMapping("/mainlecture.mdo")
 	public String mainlectureGet() {
 		return "admin/mainlecture";
 	}
-	
+
+	//X
 	@GetMapping("/lectureinsert.mdo")
 	public String lectureinsertGet() {
 		return "admin/lectureinsert";
 	}
 
+	//X
 	@ResponseBody
     @RequestMapping(value = "/insertlecture.mdo", method = RequestMethod.POST)
 	public String insertlectureGet(@ModelAttribute LectureVO lectureVO) {
 		lectureService.lectureinsert(lectureVO);
-		//sqlSessionTemplate.insert("lecture.lectureinsert",lectureVO);
 		return "redirect:/mainlecture.mdo";
 	}
 }

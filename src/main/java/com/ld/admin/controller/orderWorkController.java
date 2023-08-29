@@ -12,10 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -289,28 +286,7 @@ public class orderWorkController {
 			mav.setViewName("redirect:/orderWorkList.mdo");
 			return mav;
 		}
-		//업무 재전송
-		/*@RequestMapping("/reOrder.mdo")
-		public String reOrder(@RequestParam("id")int id,HttpServletRequest request,
-		@RequestParam("teacher_name")String teacher_name,
-		@RequestParam(value="reply",required=false)String reply,
-		@RequestParam(value="deadline",required=false)String deadline) {
-			Timestamp timestamp=null;
-			if(!deadline.equals("")) {
-				deadline=deadline+" 00:00:00";
-				timestamp = Timestamp.valueOf(deadline);
-			}
-			
-			ReportVO reportVO=new ReportVO();
-			reportVO.setReply(reply);
-			reportVO.setDeadline(timestamp);
-			reportVO.setId(id);
-			reportVO.setTeacher_name(teacher_name);
-			teacherService.reOrder(reportVO);
-			return "redirect:/orderWorkList.mdo";
-		}*/
-		//강사 업무 목록
-		@RequestMapping(value="/teacherOrderList.mdo",method=RequestMethod.GET)
+		@GetMapping(value = "/teacherOrderList.mdo")
 		public ModelAndView teacherOrderList1(@RequestParam(value="date",required=false)String date,
 				HttpServletRequest request) {
 			int id=0;

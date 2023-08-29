@@ -23,7 +23,6 @@ public class InsertCarrotController {
 	public String sendcarrotGet(
 			Model model) {
 		 StudentVO studentVO=new StudentVO();
-		//studentVO=studentService.studentList1(parentnumber);
 		model.addAttribute("studentList",studentVO);
 		return "admin/sendcarrot";
 	}
@@ -31,7 +30,6 @@ public class InsertCarrotController {
 	public String insertcarrotGet(@ModelAttribute CarrotVO carrotVO) {
 		System.out.println(carrotVO.getCarrot_date());
     	carrotService.carrotinsert(carrotVO);
-		//sqlSessionTemplate.insert("carrot.carrotinsert",carrotVO);
 		return "redirect:/carrotList.mdo?parentnumber="+carrotVO.getCarrot_number();
 	}
 	@RequestMapping("/insertCarrotGroup.mdo")

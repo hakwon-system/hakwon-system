@@ -68,7 +68,7 @@ function loginCheckTeacherEnter() {
 function idcheck() {
     if (document.joinStudent.id.value == "") {
         alert("아이디를 입력하고 중복체크를 진행하세요");
-        documnet.joinStudent.id.focus();
+        document.joinStudent.id.focus();
         return;
     }
     document.joinStudent.action = "idCheck.do";
@@ -78,7 +78,7 @@ function idcheck() {
 function idcheckTeacher() {
     if (document.joinTeacher.id.value == "") {
         alert("아이디를 입력하고 중복체크를 진행하세요");
-        documnet.joinTeacher.id.focus();
+        document.joinTeacher.id.focus();
         return;
     }
     document.joinTeacher.action = "idCheckTeacher.do";
@@ -89,7 +89,7 @@ function idcheckTeacher() {
 function idcheckTeacher2() {
     if (document.joinTeacher.id.value == "") {
         alert("아이디를 입력하고 중복체크를 진행하세요");
-        documnet.joinTeacher.id.focus();
+        document.joinTeacher.id.focus();
         return;
     }
     document.joinTeacher.action = "idCheckTeacher2.do";

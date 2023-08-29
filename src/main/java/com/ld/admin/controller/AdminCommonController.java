@@ -19,26 +19,37 @@ public class AdminCommonController {
 	@Autowired
 	private  StudentService studentService;
 
+	//X
 	@GetMapping("/adminmenu.mdo")
 	public String adminmenuGet() {
 		return "admin/adminmenu";
 	}
+
+	//X
 	@GetMapping("/accessadmin.mdo")
 	public String accessadminGet() {
 		return "admin/accessadmin";
 	}
+
+	//X
 	@GetMapping("/assignmentclass.mdo")
 	public String assignmentclassGet() {
 		return "admin/assignmentclass";
 	}
+
+	//X
 	@GetMapping("/sendmessage.mdo")
 	public String sendmessageGet() {
 		return "admin/sendmessage";
 	}
+
+	//X
 	@GetMapping("/supplement.mdo")
 	public String supplementGet() {
 		return "admin/supplement";
 	}
+
+	//X
 	@GetMapping("/tables.mdo")
 	public ModelAndView tablesGet() {
 		ModelAndView mav=new ModelAndView();
